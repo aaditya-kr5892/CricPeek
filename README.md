@@ -61,3 +61,46 @@ If you like this project or want to discuss features:
 Aaditya Kumar - aadityakumar5892@gmail.com
 ```
 
+## Use NSSM to run your backend as a background service.
+
+- Download NSSM
+
+👉 https://nssm.cc/download
+
+- Extract the zip and keep nssm.exe somewhere safe.
+
+- Install your backend as a service
+
+- Open Command Prompt as Administrator
+
+Run:
+```
+nssm install CricketScorecardBackend
+```
+- A window will pop up:
+
+   - Path: java
+    - Arguments: 
+    ```-jar path\to\your\jar\cricket-scorecard-extension-0.0.1-SNAPSHOT.jar```
+    - Startup directory: the folder where your JAR lives.
+
+    Click Install Service.
+
+- Set to Automatic
+
+    - Open services.msc
+
+    - Find CricketScorecardBackend
+
+    - Right-click → Properties → set Startup type to Automatic
+
+Now your backend will start automatically every time your PC boots.
+
+- Start the service
+
+You can start it right away:
+```right-click it in services.msc → Start.```
+
+✅ That’s it!
+Your backend is now always on when your PC is on — your extension can fetch scores anytime without you having to open your IDE or running the backend manually.
+
