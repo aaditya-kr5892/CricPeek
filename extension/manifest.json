@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "CricPeek",
+  "description": "Peek live cricket scores instantly — no need to switch tabs.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["activeTab"]
+}

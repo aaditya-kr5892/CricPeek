@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CricPeek</title>
+  <link rel="stylesheet" href="popup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="CricPeek Logo" class="logo" />
+    <h1>CricPeek</h1>
+    <p class="tagline">Live scores, zero hassle</p>
+  </header>
+
+  <div id="loader" class="loader"></div>
+
+  <div id="matches" class="matches"></div>
+  <div id="scorecard" class="scorecard hidden">
+    <!-- Detailed scorecard will be injected here -->
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
