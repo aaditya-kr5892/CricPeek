@@ -1,12 +1,12 @@
-const API_BASE = "http://localhost:8080"; // ✅ Replace with your Render or live backend
+const API_BASE = "http://localhost:8080"; 
 
 const loader = document.getElementById("loader");
 const matchesDiv = document.getElementById("matches");
 const scorecardDiv = document.getElementById("scorecard");
 
-const REFRESH_INTERVAL = 20000; // 10 seconds
+const REFRESH_INTERVAL = 20000; 
 
-// Initial load
+
 loadMatches();
 setInterval(loadMatches, REFRESH_INTERVAL);
 
@@ -67,7 +67,7 @@ function loadScorecard(matchId, match) {
     scorecardDiv.innerHTML = "";
     showLoader(true);
 
-    // Clear any existing scorecard interval
+    
     if (scorecardRefreshInterval) clearInterval(scorecardRefreshInterval);
 
     const loadAndRender = () => {
@@ -84,10 +84,7 @@ function loadScorecard(matchId, match) {
             });
     };
 
-    loadAndRender(); // Initial load
-    // Optional: refresh every 7 sec — but be mindful: this is often too frequent for scorecard details.
-    // Comment this if you prefer only manual refresh.
-    // scorecardRefreshInterval = setInterval(loadAndRender, REFRESH_INTERVAL);
+    loadAndRender(); 
 }
 
 function renderScorecard(innings, matchId, match) {
@@ -152,59 +149,6 @@ function renderScorecard(innings, matchId, match) {
         c++;
     });
 }
-
-
-
-// function renderScorecard(innings, matchId) {
-//   scorecardDiv.innerHTML = `
-//     <button class="back-button" onclick="goBack()">← Back</button>
-//     <button class="refresh-button" onclick="manualRefresh('${matchId}')">🔄 Refresh</button>
-//   `;
-
-//   innings.forEach(inning => {
-//     let html = `<h3>${inning.inningsName}</h3><h4>Batting</h4>`;
-//     html += `<table style="width:100%;">`;
-//     html += `<tr><th>Batter</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr>`;
-//     inning.batting.forEach(player => {
-//       const name = player.status && player.status.toLowerCase().includes("not out")
-//         ? `${player.name} <span class="not-out-tag">(not out)</span>`
-//         : player.name;
-
-//       html += `<tr>
-//         <td>${name}</td>
-//         <td>${player.runs}</td>
-//         <td>${player.balls}</td>
-//         <td>${player.fours}</td>
-//         <td>${player.sixes}</td>
-//         <td>${player.sr}</td>
-//       </tr>`;
-//     });
-//     html += `</table>`;
-
-//     html += `<p>Extras: ${inning.extras}</p>`;
-//     html += `<p>Total: ${inning.total}</p>`;
-//     html += `<p>Yet to Bat: ${inning.yetToBat.join(', ')}</p>`;
-
-//     html += `<h4>Bowling</h4>`;
-//     html += `<table style="width:100%;">`;
-//     html += `<tr><th>Bowler</th><th>O</th><th>M</th><th>R</th><th>W</th><th>NB</th><th>WD</th><th>ECO</th></tr>`;
-//     inning.bowling.forEach(bowler => {
-//       html += `<tr>
-//         <td>${bowler.name}</td>
-//         <td>${bowler.overs}</td>
-//         <td>${bowler.maidens}</td>
-//         <td>${bowler.runs}</td>
-//         <td>${bowler.wickets}</td>
-//         <td>${bowler.nb}</td>
-//         <td>${bowler.wd}</td>
-//         <td>${bowler.eco}</td>
-//       </tr>`;
-//     });
-//     html += `</table>`;
-
-//     scorecardDiv.innerHTML += html;
-//   });
-// }
 
 function manualRefresh(matchId, match) {
     showLoader(true);
