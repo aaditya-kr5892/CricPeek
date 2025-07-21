@@ -31,5 +31,10 @@ public class CricketController {
         return cricketService.fetchScores(matchid);
     }
 
+    @GetMapping("/test")
+    public String test() {
+        return "Backend is working!";
+    }
+
 }
 
