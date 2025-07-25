@@ -66,12 +66,6 @@ this will run backend on port 8081, change it if you want
 - Click Load Unpacked
 - Select the extension folder in CricPeek 
 
-## 📫 Contact
-```
-If you like this project or want to discuss features:
-Aaditya Kumar - aadityakumar5892@gmail.com
-```
-
 ## Use NSSM to run your backend as a background service.
 
 - Download NSSM
@@ -116,3 +110,8 @@ You can start it right away:
 ✅ That’s it!
 Your backend is now always on when your PC is on — your extension can fetch scores anytime without you having to open your IDE or running the backend manually.
 
+## 📫 Contact
+```
+If you like this project or want to discuss features:
+Aaditya Kumar - aadityakumar5892@gmail.com
+```
