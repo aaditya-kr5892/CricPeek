@@ -41,19 +41,30 @@
 ```bash
 git clone https://github.com/aaditya-kr5892/CricPeek.git
 cd CricPeek
+cd backend
 ```
 ## ✅ 2. Build & Run Backend
 ```
-./mvnw spring-boot:run
+mvnw.cmd clean package
+```
+then
+```
+mvnw.cmd spring-boot:run
 ```
 
 By default, the backend runs on http://localhost:8080.
+
+if port 8080 is busy running something them use this run command
+```
+mvnw.cmd spring-boot:run -Dspring-boot.run.arguments="--server.port=8081"
+```
+this will run backend on port 8081, change it if you want
 
 ## ✅ 3. Load the Extension
 - Open chrome://extensions
 - Enable Developer Mode
 - Click Load Unpacked
-- Select the folder containing your manifest.json and popup files
+- Select the extension folder in CricPeek 
 
 ## 📫 Contact
 ```
@@ -67,28 +78,29 @@ Aaditya Kumar - aadityakumar5892@gmail.com
 
 👉 https://nssm.cc/download
 
-- Extract the zip and keep nssm.exe somewhere safe.
-
-- Install your backend as a service
+- Extract the zip.
 
 - Open Command Prompt as Administrator
 
+- Install your backend as a service
+
 Run:
 ```
-nssm install CricketScorecardBackend
+C:\location\of\your\nssm.exe install CricketScorecardBackend
 ```
 - A window will pop up:
 
-   - Path: java
-    - Arguments: 
+   - Path: Application path: Path to your Java executable: `C:\Program Files\Java\jdk-22\bin\java.exe`
+
+    - Arguments: Go inside the target folder in the backend and right click and copy as path your .jar file.
     ```-jar path\to\your\jar\cricket-scorecard-extension-0.0.1-SNAPSHOT.jar```
-    - Startup directory: the folder where your JAR lives.
+    - Startup directory: location of your target folder.
 
     Click Install Service.
 
 - Set to Automatic
 
-    - Open services.msc
+    - Open Services (press windows button and search services)
 
     - Find CricketScorecardBackend
 
